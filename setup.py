@@ -1,6 +1,8 @@
 from setuptools import find_packages, setup
 from typing import List
 HYPEN_E_DOT ="-e ."
+
+
 def get_requirments(file_path:str)->list[str]:
     '''
     This function return list of requirments
@@ -15,10 +17,9 @@ def get_requirments(file_path:str)->list[str]:
 
     return requirments
 
-setup(
-    name='mlproject',
-    version='0.0.1',
-    author_email='Narenyadav0929@gmail.com'
-    packages=find_packages(),
-    install_requires=get_requirements('requirements.txt')
-)
+setup(  name='mlproject',
+        version='0.0.1',
+        author_email='Narenyadav0929@gmail.com',
+        packages=find_packages(),
+        install_requires=get_requirments('requirements.txt')
+          )
