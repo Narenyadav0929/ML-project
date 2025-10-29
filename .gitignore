@@ -199,7 +199,9 @@ cython_debug/
 #  exclude from AI features like autocomplete and code analysis. Recommended for sensitive data
 #  refer to https://docs.cursor.com/context/ignore-files
 # Project artifacts
+.artifacts
 artifacts/
+.catboost_info
 logs/
 .cursorignore
 .cursorindexingignore
@@ -208,3 +210,7 @@ logs/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+
+# test_files
+src/components/model_trainer1.py
