@@ -213,4 +213,5 @@ __marimo__/
 
 
 # test_files
+./src/components/model_trainer1.py
 src/components/model_trainer1.py
