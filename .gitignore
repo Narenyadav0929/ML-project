@@ -202,6 +202,7 @@ cython_debug/
 .artifacts
 artifacts/
 .catboost_info
+catboost_info/
 logs/
 .cursorignore
 .cursorindexingignore
