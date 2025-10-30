@@ -201,6 +201,9 @@ cython_debug/
 # Project artifacts
 .artifacts
 artifacts/
+*.pkl
+*.sav
+*.joblib
 .catboost_info
 catboost_info/
 notebook/catboost_info/
