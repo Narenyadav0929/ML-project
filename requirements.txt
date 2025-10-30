@@ -6,4 +6,5 @@ scikit-learn
 setuptools
 catboost
 xgboost
+dill
 #-e .

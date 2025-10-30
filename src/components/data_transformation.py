@@ -46,7 +46,7 @@ class DataTransformation:
             cat_pipeline = Pipeline(steps=[
                 ('simple_impute',SimpleImputer(strategy="most_frequent")),
                 ('onehot',OneHotEncoder()),
-                ('scaler',StandardScaler())
+                ('scaler',StandardScaler(with_mean=False))
             ])
             logging.info(f"Categorical columns: {categorical_columns}")
             logging.info(f"Numerical columns: {numerical_columns}")
@@ -74,7 +74,6 @@ class DataTransformation:
             preprocessing_obj=self.get_data_transformer_object()
 
             target_column_name="math_score"
-            numerical_columns = ["writing_score", "reading_score"]
 
             input_feature_train_df=train_df.drop(columns=[target_column_name],axis=1)
             target_feature_train_df=train_df[target_column_name]
@@ -94,6 +93,11 @@ class DataTransformation:
             ]
             test_arr = np.c_[input_feature_test_arr, np.array(target_feature_test_df)]
 
+            save_object(
+                file_path=self.data_transformation_config.preprocessor_obj_file_path,
+                obj=preprocessing_obj
+            )
+            logging.info(f"Pickle file is saved")
             return (
                 train_arr,
                 test_arr,
