@@ -26,7 +26,7 @@ def save_object(file_path, obj):
 def evaluate_models(X_train, y_train,X_test,y_test,models:dict):
     try:
         report = {}
-        for i in range(list(models.keys())):
+        for i in range(len(list(models.keys()))):
             model = list(models.values())[i]
             model.fit(X_train,y_train)
 
