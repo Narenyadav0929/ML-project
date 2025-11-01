@@ -24,7 +24,7 @@ class DataIngestion:
 
     def initiate_data_ingestion(self):
         """Read the raw dataset, persist it, and create train/test splits."""
-        logging.info("Entered the data ingestion method or component")
+        logging.info("Entered the data ingestion method")
         try:
              # Make the CSV path safe & clear
             data_path = os.path.join('notebook', 'data', 'stud.csv')
