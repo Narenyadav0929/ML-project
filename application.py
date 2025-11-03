@@ -3,7 +3,7 @@ import pickle
 import pandas as pd
 import numpy as np
 from sklearn.preprocessing import StandardScaler
-from src.pipeline.predict_pipeline import CustomData, predeict_pipeline
+from src.pipeline.predict_pipeline import CustomData, predict_pipeline
 
 application = Flask(__name__)
 
@@ -35,13 +35,14 @@ def predict_datapoint():
         pred_df = data.get_data_as_data_frame()
         print(pred_df)
 
-        predeict_pipeline_ = predeict_pipeline()
+        predeict_pipeline_ = predict_pipeline()
 
         results = predeict_pipeline_.predict(pred_df)
         return render_template('home.html',results=results[0])
     
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0",debug=False)
+    # app.run(host="0.0.0.0",debug=False)
+    app.run(host='0.0.0.0', port=8080, debug=True)
 
     
