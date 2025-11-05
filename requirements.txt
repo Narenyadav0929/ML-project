@@ -9,5 +9,4 @@ xgboost
 dill
 flask
 gunicorn
-nginx
-# -e .
+-e .

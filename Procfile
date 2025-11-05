@@ -1,1 +1,1 @@
-web: gunicorn -k gthread -b 127.0.0.1:8000 application:app
+web: gunicorn --bind :8000 --workers 1 --threads 8 --timeout 600 application:application
