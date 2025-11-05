@@ -209,7 +209,7 @@ logs/
 .cursorignore
 .cursorindexingignore
 .ebextensions
-old_.ebextensions
+.old_.ebextensions
 Procfile
 .__ebextensions
 
