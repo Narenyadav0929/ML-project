@@ -208,6 +208,9 @@ notebook/catboost_info/
 logs/
 .cursorignore
 .cursorindexingignore
+.ebextensions
+old_.ebextensions
+
 
 # Marimo
 marimo/_static/
