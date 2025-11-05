@@ -84,6 +84,9 @@ RUN pip install --upgrade pip \
 # Copy the rest of the application source
 COPY . .
 
-EXPOSE 8000
+# EXPOSE 8000
 
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "application:app"]
+# CMD ["gunicorn", "--bind", "0.0.0.0:8000", "application:app"]
+
+EXPOSE 8000
+CMD ["sh", "-c", "gunicorn --bind 0.0.0.0:${PORT:-8000} application:application"]

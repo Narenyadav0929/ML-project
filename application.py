@@ -4,6 +4,7 @@ from src.pipeline.predict_pipeline import CustomData, predict_pipeline
 from src.exception import CustomException
 import math
 import sys
+import os
 
 application = Flask(__name__)
 
@@ -127,5 +128,9 @@ def predict_datapoint():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0",debug=False,port=8000)
+   
+    port = int(os.environ.get("PORT", 8000))
+    app.run(host="0.0.0.0", port=port, debug=False)
+
+    #  app.run(host="0.0.0.0",debug=False,port=8000)
     # app.run(host='0.0.0.0', port=8080, debug=True)
