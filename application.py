@@ -3,6 +3,7 @@ from src.logger import logger
 from src.pipeline.predict_pipeline import CustomData, predict_pipeline
 from src.exception import CustomException
 import math
+import sys
 
 application = Flask(__name__)
 
@@ -16,28 +17,35 @@ def index():
 def health():
     return "OK", 200
 
-@app.route('/predictdatapoint.html',methods=['GET','POST'])
+@app.route("/predictdatapoint",methods=['GET','POST'])
 def predict_datapoint():
     if request.method == 'GET':
         return render_template('home.html')
     else:
-        # data=CustomData(
-        #     gender=request.form.get('gender'),
-        #     race_ethnicity=request.form.get('ethnicity'),
-        #     parental_level_of_education=request.form.get('parental_level_of_education'),
-        #     lunch=request.form.get('lunch'),
-        #     test_preparation_course=request.form.get('test_preparation_course'),
-        #     reading_score=float(request.form.get('writing_score')),
-        #     writing_score=float(request.form.get('reading_score'))
+        # try:
+        #     data=CustomData(
+        #         gender=request.form.get('gender'),
+        #         race_ethnicity=request.form.get('ethnicity'),
+        #         parental_level_of_education=request.form.get('parental_level_of_education'),
+        #         lunch=request.form.get('lunch'),
+        #         test_preparation_course=request.form.get('test_preparation_course'),
+        #         reading_score=float(request.form.get('writing_score')),
+        #         writing_score=float(request.form.get('reading_score'))
 
-        # )
-        # pred_df = data.get_data_as_data_frame()
-        # print(pred_df)
+        #     )
+        #     pred_df = data.get_data_as_data_frame()
+        #     print(pred_df)
 
-        # predeict_pipeline_ = predict_pipeline()
+        #     predeict_pipeline_ = predict_pipeline()
 
-        # results = predeict_pipeline_.predict(pred_df)
-        # return render_template('home.html',results=results[0])
+        #     results = predeict_pipeline_.predict(pred_df)
+        #     return render_template('home.html',results=results[0])
+        # except Exception as e:
+        #     raise CustomException(e,sys)    
+
+        # -------------------------------------------
+
+
         form_values = request.form.to_dict(flat=True)
 
         def _parse_score(raw_value: str, label: str) -> float:
