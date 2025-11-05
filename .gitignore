@@ -210,7 +210,8 @@ logs/
 .cursorindexingignore
 .ebextensions
 old_.ebextensions
-
+Procfile
+.__ebextensions
 
 # Marimo
 marimo/_static/
