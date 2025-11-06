@@ -3,12 +3,18 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo "No build needed for EB Docker"
-  build:
-    commands:
-      - echo "Packaging source for Elastic Beanstalk"
+      - echo "No build step needed for EB Docker"
+
 artifacts:
   files:
-    - '**/*'
-  base-directory: .
+    - Dockerfile
+    - application.py
+    - requirements.txt
+    - templates/**/*
+    - src/**/*
+    - artifacts/**/*
+    - .dockerignore
+    - .ebextensions/**/*     # keep if you have this folder (optional)
+    - .platform/**/*         # keep if you have this folder (optional)
+  base-directory: $CODEBUILD_SRC_DIR
   discard-paths: no
