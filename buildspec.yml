@@ -1,0 +1,14 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo "No build needed for EB Docker"
+  build:
+    commands:
+      - echo "Packaging source for Elastic Beanstalk"
+artifacts:
+  files:
+    - '**/*'
+  base-directory: .
+  discard-paths: no
