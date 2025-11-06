@@ -13,6 +13,7 @@ artifacts:
     - templates/**/*
     - src/**/*
     - artifacts/**/*
+    - setup.py
     - .dockerignore
     - .ebextensions/**/*     # keep if you have this folder (optional)
     - .platform/**/*         # keep if you have this folder (optional)
